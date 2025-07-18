@@ -5,7 +5,10 @@ import '../models/token_model/token_model.dart';
 import '../user/model/user_model.dart';
 
 class JwtService {
+
+
   static const String _secretKey = 'your-secret-key-here-change-in-production';
+  static const String _secretKey2 = 'your-secret-key-here-change-in-production';
 
   static TokenPair generateTokenPair(UserModel user) {
     final now = DateTime.now();

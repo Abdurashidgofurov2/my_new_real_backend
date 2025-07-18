@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 import 'package:shelf/shelf.dart';
 import '../service/user_db.dart';
@@ -224,7 +225,8 @@ class AuthController {
     if (authHeader == null || !authHeader.startsWith('Bearer ')) return false;
     final token = authHeader.substring(7);
     try {
-      final jwt = JWT.verify(token, SecretKey(JwtService._secretKey));
+
+      final jwt = JWT.verify(token, SecretKey("your-secret-key-here-change-in-production"));
       final userId = jwt.payload['user_id'];
       final tokenVersion = jwt.payload['token_version'];
       if (userId == null || tokenVersion == null) return false;
