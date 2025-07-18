@@ -9,3 +9,4 @@ services:
     envVars:
       - key: PORT
         value: "8080" # Bu yerda o'zgartirish kiritildi: "8080" qo'shildi
+    runtime: docker
