@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: new-backend
+    env: docker
+    plan: free
+    autoDeploy: true
+    branch: master # yoki main, sizning branch nomingizga qarab
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8080 
